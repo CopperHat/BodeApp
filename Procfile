@@ -1,0 +1,1 @@
+web: java $JAVA_OPTS -jar BodeWeb/target/dependency/webapp-runner.jar --port $PORT BodeWeb/target/BodeWeb.war
