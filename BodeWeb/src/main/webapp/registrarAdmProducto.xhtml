@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="template.xhtml">
+	<ui:define name="body">
+		<div class="main-colum">
+			<!-- wrap -->
+			<div class="box-wrap-main">
+				<div class="box-wrap-header">
+					<div class="pull-left">
+						<div class="title-main">#{m['registrarAdmProducto.cabecera']}</div>
+					</div>
+				</div>
+				<div class="box-form">
+					<h:form prependId="false" id="frmIndex">
+						<h:inputHidden value="#{productoController.inicioMantenimiento}" />
+						<br />
+						<h:panelGrid columns="3" id="panel02">
+
+							<h:outputLabel value="Nombre:" />
+							<h:outputLabel value="&#160;" />
+							<h:inputText id="txtNombre"
+								label="#{m['registrarAdmProducto.nombre']}"
+								value="#{productoController.productoGuardar.nombre}"
+								required="true" size="50" class="form-control" />
+
+							<h:outputLabel value="Tipo:" />
+							<h:outputLabel value="&#160;" />
+							<h:selectOneMenu value="#{productoController.productoGuardar.tipo}" id="cboTipo">
+								<f:selectItem itemValue="Embutidos" itemLabel="Embutidos" />
+								<f:selectItem itemValue="Golosinas" itemLabel="Golosinas" />
+								<f:selectItem itemValue="Lacteos" itemLabel="Lacteos" />
+								<f:selectItem itemValue="Verduras" itemLabel="Verduras" />
+							</h:selectOneMenu>
+
+							<h:outputLabel value="Cantidad:" />
+							<h:outputLabel value="&#160;" />
+							<h:inputText id="txtCantidad"
+								label="#{m['registrarAdmProducto.cantidad']}"
+								value="#{productoController.productoGuardar.cantidad}"
+								required="true" size="50" class="form-control" />
+
+							<h:outputLabel value="Precio:" />
+							<h:outputLabel value="&#160;" />
+							<h:inputText id="txtPrecio"
+								label="#{m['registrarAdmProducto.precio']}"
+								value="#{productoController.productoGuardar.precio}"
+								required="true" size="50" class="form-control" />
+
+							<h:outputLabel value="Descuento:" />
+							<h:outputLabel value="&#160;" />
+							<h:selectBooleanCheckbox value="#{productoController.productoGuardar.descuento}" id="chkDescuento">
+							</h:selectBooleanCheckbox>
+
+							<h:outputLabel value="Nacionalidad:" />
+							<h:outputLabel value="&#160;" />
+							<h:selectOneRadio required="true" label="#{m['registrarAdmProducto.nacional']}"
+								value="#{productoController.productoGuardar.nacional}" id="rdoNacionalidad">
+								<f:selectItem itemValue="Peruana" itemLabel="Peruana"  />
+								<f:selectItem itemValue="Extranjera" itemLabel="Extranjera" />
+							</h:selectOneRadio>
+
+							<h:outputLabel value="&#160;" />
+							<h:outputLabel value="&#160;" />
+							<h:outputLabel value="&#160;" />
+
+							<h:outputLabel value="" />
+							<h:outputLabel value="" />
+							<h:panelGrid columns="2">
+								<p:commandButton id="btnGuardar"
+									value="#{m['template.guardar']}"
+									action="#{productoController.insertar}" update="panel02"
+									style="width: 150px" class="btn-s btn-search" />
+								<p:commandButton id="btnVolver" value="#{m['template.volver']}"
+									action="mntAdmProducto" immediate="true" ajax="false"
+									style="width: 150px" class="btn-s btn-add" />
+							</h:panelGrid>
+						</h:panelGrid>
+						<br />
+						<p:messages id="messages" showDetail="false" autoUpdate="true" />
+					</h:form>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+

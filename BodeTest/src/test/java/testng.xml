@@ -1,0 +1,51 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="VisorSystemSuite" parallel="tests">
+	<test name="ProductoWebDriverTestChrome" enabled="true">
+		<parameter name="navegador" value="chrome" />
+		<parameter name="rutaExcelRegistrar" value="C:\DataBode\RegistrarProductoData.xlsx" />
+		<parameter name="rutaExcelBuscar" value="C:\DataBode\BuscarProductoData.xlsx" />
+		<parameter name="rutaExcelEditar" value="C:\DataBode\EditarProductoData.xlsx" />
+		<parameter name="rutaExcelEliminar" value="C:\DataBode\EliminarProductoData.xlsx" />
+		<parameter name="rutaCapturaPantalla" value="C:\CapturaPantallaBode\Chrome\Producto" />
+		<classes>
+			<class
+				name="pe.com.test.system.testcase.MantenimientoProductoTest" />
+		</classes>
+	</test>
+	<test name="ProductoWebDriverTestFirefox" enabled="false">
+		<parameter name="navegador" value="firefox" />
+		<parameter name="rutaExcelRegistrar" value="C:\DataBode\RegistrarProductoData.xlsx" />
+		<parameter name="rutaExcelBuscar" value="C:\DataBode\BuscarProductoData.xlsx" />
+		<parameter name="rutaExcelEditar" value="C:\DataBode\EditarProductoData.xlsx" />
+		<parameter name="rutaExcelEliminar" value="C:\DataBode\EliminarProductoData.xlsx" />
+		<parameter name="rutaCapturaPantalla" value="C:\CapturaPantallaBode\Firefox\Producto" />
+		<classes>
+			<class
+				name="pe.com.test.system.testcase.MantenimientoProductoTest" />
+		</classes>
+	</test>	
+	<test name="ProductoWebDriverTestInternetExplorer" enabled="false">
+		<parameter name="navegador" value="iexplorer" />
+		<parameter name="rutaExcelRegistrar" value="C:\DataBode\RegistrarProductoData.xlsx" />
+		<parameter name="rutaExcelBuscar" value="C:\DataBode\BuscarProductoData.xlsx" />
+		<parameter name="rutaExcelEditar" value="C:\DataBode\EditarProductoData.xlsx" />
+		<parameter name="rutaExcelEliminar" value="C:\DataBode\EliminarProductoData.xlsx" />
+		<parameter name="rutaCapturaPantalla" value="C:\CapturaPantallaBode\InternetExplorer\Producto" />
+		<classes>
+			<class
+				name="pe.com.test.system.testcase.MantenimientoProductoTest" />
+		</classes>
+	</test>
+		<test name="ProductoWebDriverTestOpera" enabled="false">
+		<parameter name="navegador" value="opera" />
+		<parameter name="rutaExcelRegistrar" value="C:\DataBode\RegistrarProductoData.xlsx" />
+		<parameter name="rutaExcelBuscar" value="C:\DataBode\BuscarProductoData.xlsx" />
+		<parameter name="rutaExcelEditar" value="C:\DataBode\EditarProductoData.xlsx" />
+		<parameter name="rutaExcelEliminar" value="C:\DataBode\EliminarProductoData.xlsx" />
+		<parameter name="rutaCapturaPantalla" value="C:\CapturaPantallaBode\Opera\Producto" />
+		<classes>
+			<class
+				name="pe.com.test.system.testcase.MantenimientoProductoTest" />
+		</classes>
+	</test>
+</suite>
